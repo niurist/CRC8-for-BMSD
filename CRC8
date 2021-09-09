@@ -1,0 +1,18 @@
+def CRC8(data, seed):
+    bits_Left = 8
+    temp = 0
+    
+    while bits_Left > 0:
+        bits_Left -= 1
+        temp = ((seed ^ data) & 0x01)  #исключающее ИЛИ для data и seed, затем побитовая операция AND
+        
+        if (temp == 0):
+            seed >>= 1      # сдвиг вправо на 1 бит
+        
+        else:
+            seed ^= 0x18    # исключащее ИЛИ по маске 18h (0001 1000)
+            seed >>= 1      # битовый сдвиг вправо на 1 бит
+            seed |= 0x80    # битовое ИЛИ с маской 80h (1000 0000)
+        
+        data >>= 1          # сдвиг вправо на 1 бит
+    return seed
