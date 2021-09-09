@@ -1,4 +1,4 @@
 # CRC8-for-BMSD
-Calculation CRC8 for motor controller BMSD
+Calculation CRC8 for DC Brush motor controller BMSD
 
 Данный код предназначен для вычислений контрольной суммы (CRC8) блока управления коллекторными двигателями с возможностью управления по RS-485 (BMSD) фирмы "Электропривод".
